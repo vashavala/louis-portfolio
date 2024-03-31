@@ -1,4 +1,5 @@
 "use client"
+import Link from "next/link";
 import React, { useEffect, useState } from "react";
 
 export default function Nav() {
@@ -19,10 +20,10 @@ export default function Nav() {
         <div>Louis Liu</div>
         <div className="flex gap-8">
           <div className="flex gap-8 max-md:hidden">
-            <button>Home</button>
-            <button>Projects</button>
-            <button>Skills</button>
-            <button>Contact Me</button>
+            <Link href="#Home" scroll={false}>Home</Link>
+            <Link href="#About" scroll={false}>About</Link>
+            <Link href="#Skills" scroll={false}>Skills</Link>
+            <Link href="#Contact Me" scroll={false}>Contact Me</Link>
           </div>
           <svg viewBox="0 0 100 100" className="w-8 aspect-square cursor-pointer" onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}>
             {

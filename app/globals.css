@@ -32,6 +32,10 @@
   }
 }
 
+*{
+  scroll-behavior: smooth!important;
+}
+
 :root {
   --background-color: 255, 255, 255;
   --text-color: 0, 0, 0;

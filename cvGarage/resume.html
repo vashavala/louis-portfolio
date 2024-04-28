@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.js"></script>
+  <style> 
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    button {
+      position: fixed;
+      top: 0;
+      left: 0;
+      font-size: 4rem;
+    }
+
+    :root,
+    body {
+      height: 100vh;
+      width: 100vw;
+      background-color: #000;
+    }
+
+    .dfc {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .dfc-h {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+    }
+
+    p {
+      position: relative;
+      padding-left: 16px;
+      line-height: calc(16px * 2);
+    }
+
+    p::before {
+      content: '';
+      position: absolute;
+      left: 6px;
+      top: calc(16px - 2px);
+
+      width: 4px;
+      aspect-ratio: 1;
+      border-radius: 50%;
+      background-color: #000;
+    }
+
+    #content {
+      height: 1123px;
+      width: 794px;
+      background-color: #fff;
+      color: #000;
+
+      box-sizing: border-box;
+      padding: 32px;
+    }
+
+    /* header */
+    header .name {
+      font-size: calc(16px * 2);
+      font-weight: bold;
+    }
+
+    header .base-info {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+    }
+
+    /* section */
+    section .title {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin: 8px 0;
+    }
+
+    section .title span {
+      font-weight: bold;
+    }
+
+    section .title .line {
+      flex: 1;
+      height: 1px;
+      background-color: #000;
+    }
+
+
+    /* Experience */
+    .main-info {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .main-info > *{
+      flex: 33.3333333333%;
+      text-align: center;
+    }
+
+    .main-info > *:first-child{
+      text-align: left;
+    }
+
+    .main-info > *:last-child{
+      text-align: right;
+    }
+  </style>
+</head>
+
+<body class="dfc">
+  <div id="content">
+    <!-- header -->
+    <header class="dfc-h">
+      <span class="name">Louis Liu</span>
+      <div class="base-info">
+        <a>linkedin.com/in/louis-liu-dev</a>
+        <a>github.com/vashavala</a>
+        <!-- <a>louisliu.vercel.app</a> -->
+        <a>louisliu.dev@gmail.com</a>
+      </div>
+    </header>
+
+    <!-- Skills -->
+    <section>
+      <div class="title">
+        <span>Skills</span>
+        <div class="line"></div>
+      </div>
+
+      <p>React | Next.js | Redux | Zustand | Vue3 | Nuxt | Vuex | Pinia | JQuery</p>
+      <p>JavaScript | TypeScript | Node | tailwindCSS | Bootstrap | Material UI | Ant Design | Sass | Less</p>
+      <p>Webpack | Jest | Git | Performance Optimization | Responsive Design | SEO </p>
+    </section>
+
+    <!-- Experience -->
+    <section>
+      <div class="title">
+        <span>Experience</span>
+        <div class="line"></div>
+      </div>
+
+      <!-- exp 1 -->
+      <div class="a-exp">
+        <div class="main-info">
+          <span>Senior FrontEnd Developer</span>
+          <span>Thinkive</span>
+          <span>06/2021 - Current</span>
+        </div>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non, odit!</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non, odit!it amet, consectetur adipisicing elit.
+          Non, odit!</p>
+      </div>
+
+      <!-- exp 2 -->
+      <div class="a-exp">
+        <div class="main-info">
+          <span>FrontEnd Developer</span>
+          <span>Simuwang</span>
+          <span>09/2018 - 04/2021</span>
+        </div>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non, odit!</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non, odit!it amet, consectetur adipisicing elit.
+          Non, odit!</p>
+      </div>
+    </section>
+
+    <!-- Education -->
+    <section>
+      <div class="title">
+        <span>Education</span>
+        <div class="line"></div>
+      </div>
+
+      <div class="a-exp">
+        <div class="main-info">
+          <span>Bechalor</span>
+          <span>ShaoGuan University</span>
+          <span>09/2015 - 06/2019</span>
+        </div>
+        <span>Major in Information and Computing Science</span>
+      </div>
+    </section>
+
+
+    <!-- Others -->
+    <section>
+      <div class="title">
+        <span>Others</span>
+        <div class="line"></div>
+      </div>
+
+      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore, molestias.</p>
+      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore, molestias., dolor sit amet consectetur
+        adipisicing elit. Tempore, molestias.</p>
+    </section>
+  </div>
+
+
+
+  <button onclick="save();">HTML2PDF</button>
+  <script>
+    const element = document.getElementById('content'); // Selects the element with ID 'report'
+    const options = {
+      filename: 'my-document.pdf',
+      margin: 0,
+      image: { type: 'jpeg', quality: 0.98 },
+      html2canvas: { scale: 2 },
+      jsPDF: { unit: 'in', format: 'a4', orientation: 'portrait' },
+    };
+    const save = () => html2pdf().from(element).set(options).save();
+  </script>
+</body>
+
+</html>

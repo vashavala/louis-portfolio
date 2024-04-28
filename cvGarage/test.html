@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <style>
+    *{ margin: 0; padding: 0 }
+    :root, body{ height: 100vh; width: 100vw }
+    body{ display: flex;align-items: center;justify-content: center }
+    #content{
+      height: calc(297px * 4); width: calc(210px * 4);
+      outline: 1px solid red;
+    }
+    header .links{
+      display: flex;align-items: center;
+      gap: 1rem;
+    }
+    .dl-btn{ position: fixed; top: 0; left: 0; }
+
+    body > * {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    h1{ text-align: center; }
+  </style>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+  <script>
+    function generatePDF() {
+      const element = document.getElementById('content');
+      html2pdf(element);
+    }
+  </script>
+</head>
+
+<body>
+  <div id="content">
+    <header>
+      <h1>Louis Liu</h1>
+      <div class="links">
+        <a href="linkedin.com/in/louis-liu-dev/">Linkedin</a>
+        <span>louisliu.dev@gmail.com</span>
+        <span>86-150-1816-8034</span>
+        <a href="github.com/vashavala">Github</a>
+      </div>
+    </header>
+
+    <!-- Skills -->
+    <section></section>
+
+    <!-- Experience -->
+    <section></section>
+
+    <!-- Education -->
+    <section></section>
+
+    <!-- Others -->
+    <section></section>
+  </div>
+  <button class="dl-btn" onclick="generatePDF()">Download as PDF</button>
+</body>
+
+</html>
